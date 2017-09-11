@@ -34,19 +34,20 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
 		float VoiceCaptureVolume;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
 		bool VoiceCaptureTest;
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
 		bool PlayVoiceCaptureFlag;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
 		FTimerHandle VoiceCaptureTickTimer;
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
 		FTimerHandle PlayVoiceCaptureTimer;
 
+	
 	TSharedPtr<class IVoiceCapture> VoiceCapture;
 
 	UPROPERTY()
@@ -55,13 +56,13 @@ public:
 	UPROPERTY(VisibleAnywhere, BluePrintReadOnly)
 		UAudioComponent* VoiceCaptureAudioComponent;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
 		TArray<uint8> VoiceCaptureBuffer;
 
 	UFUNCTION()
 		void VoiceCaptureTick();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable, Category="VoiceCap")
 		void PlayVoiceCapture();
 	
 	
