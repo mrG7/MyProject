@@ -19,35 +19,36 @@ class MYPROJECT_API AMyCharacter : public ACharacter
 
 
 
-public:
-	// Sets default values for this character's properties
-	AMyCharacter();
+
+
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
+
+	AMyCharacter();
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
+	UPROPERTY()
 		float VoiceCaptureVolume;
 
-	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
+	UPROPERTY()
 		bool VoiceCaptureTest;
-	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
+	UPROPERTY()
 		bool PlayVoiceCaptureFlag;
 
-	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
+	UPROPERTY()
 		FTimerHandle VoiceCaptureTickTimer;
-	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
+	UPROPERTY()
 		FTimerHandle PlayVoiceCaptureTimer;
 
-	
 	TSharedPtr<class IVoiceCapture> VoiceCapture;
 
 	UPROPERTY()
@@ -56,13 +57,13 @@ public:
 	UPROPERTY(VisibleAnywhere, BluePrintReadOnly)
 		UAudioComponent* VoiceCaptureAudioComponent;
 
-	UPROPERTY(BlueprintReadWrite, Category="VoiceCap")
+	UPROPERTY()
 		TArray<uint8> VoiceCaptureBuffer;
 
 	UFUNCTION()
 		void VoiceCaptureTick();
 
-	UFUNCTION(BlueprintCallable, Category="VoiceCap")
+	UFUNCTION()
 		void PlayVoiceCapture();
 	
 	
