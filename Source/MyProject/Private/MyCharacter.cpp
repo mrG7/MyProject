@@ -19,7 +19,7 @@ AMyCharacter::AMyCharacter()
 	VoiceCaptureAudioComponent->bAutoActivate = true;
 	VoiceCaptureAudioComponent->bAlwaysPlay = true;
 	VoiceCaptureAudioComponent->PitchMultiplier = 0.85f;
-	VoiceCaptureAudioComponent->VolumeMultiplier = 3.f;
+	VoiceCaptureAudioComponent->VolumeMultiplier = 5.f;
 
 	VoiceCaptureSoundWaveProcedural = NewObject<USoundWaveProcedural>();
 	VoiceCaptureSoundWaveProcedural->SampleRate = 22050;
@@ -40,7 +40,7 @@ void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GetWorldTimerManager().SetTimer(PlayVoiceCaptureTimer, this, &AMyCharacter::PlayVoiceCapture, 0.4f, true, 0.f);
+	GetWorldTimerManager().SetTimer(PlayVoiceCaptureTimer, this, &AMyCharacter::PlayVoiceCapture, 0.f, true, 0.f);
 	
 }
 
@@ -107,7 +107,7 @@ void AMyCharacter::PlayVoiceCapture()
 
 	if (!PlayVoiceCaptureFlag)
 	{
-		VoiceCaptureAudioComponent->FadeOut(0.3f, 0.f);
+		VoiceCaptureAudioComponent->FadeOut(1.f, 0.f);
 		return;
 	}
 
