@@ -3,8 +3,7 @@ https://www.youtube.com/watch?v=nMNou_FEBx0
 
 Tutorial on using VoiceCapture in Unreal Engine 4 by @Ascentroid. 
 
-This projects implements that to then send that voice data as soundwave in the engine so that user voice projects onto the acoustic meshes within the simulated world. 
-
+This projects implements that to then send that voice data as soundwave in the engine so that user voice projects onto the acoustic meshes within the simulated world. We have yet to perform adequate testing, preferably in multiplayer. 
 -io
 
 #liveLongProsper
